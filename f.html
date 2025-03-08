@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ونتوریا | Vantoria</title>
+  <meta name="description" content="منوی دیجیتال ونتوریا | Vantoria Digital Menu">
+  
+  <!-- Import Vazirmatn font for Persian text -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset and base styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    :root {
+      --primary: #f59e0b;
+      --primary-foreground: #000000;
+      --background: #000000;
+      --foreground: #ffffff;
+      --card: #18181b;
+      --card-foreground: #ffffff;
+      --border: #27272a;
+      --muted: #71717a;
+      --radius: 0.5rem;
+      --transition: 0.3s ease;
+    }
+    
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      min-height: 100vh;
+      line-height: 1.5;
+      direction: rtl;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    button {
+      cursor: pointer;
+      font-family: inherit;
+    }
+    
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .relative {
+      position: relative;
+    }
+    
+    .absolute {
+      position: absolute;
+    }
+    
+    .fixed {
+      position: fixed;
+    }
+    
+    .flex {
+      display: flex;
+    }
+    
+    .flex-col {
+      flex-direction: column;
+    }
+    
+    .items-center {
+      align-items: center;
+    }
+    
+    .justify-center {
+      justify-content: center;
+    }
+    
+    .justify-between {
+      justify-content: space-between;
+    }
+    
+    .justify-end {
+      justify-content: flex-end;
+    }
+    
+    .gap-2 {
+      gap: 0.5rem;
+    }
+    
+    .gap-4 {
+      gap: 1rem;
+    }
+    
+    .w-full {
+      width: 100%;
+    }
+    
+    .h-full {
+      height: 100%;
+    }
+    
+    .inset-0 {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .z-10 {
+      z-index: 10;
+    }
+    
+    .z-20 {
+      z-index: 20;
+    }
+    
+    .z-30 {
+      z-index: 30;
+    }
+    
+    .z-50 {
+      z-index: 50;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    .block {
+      display: block;
+    }
+    
+    .inline-block {
+      display: inline-block;
+    }
+    
+    /* Typography */
+    .text-center {
+      text-align: center;
+    }
+    
+    .text-xs {
+      font-size: 0.75rem;
+    }
+    
+    .text-sm {
+      font-size: 0.875rem;
+    }
+    
+    .text-base {
+      font-size: 1rem;
+    }
+    
+    .text-lg {
+      font-size: 1.125rem;
+    }
+    
+    .text-xl {
+      font-size: 1.25rem;
+    }
+    
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+    
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+    
+    .font-medium {
+      font-weight: 500;
+    }
+    
+    .font-bold {
+      font-weight: 700;
+    }
+    
+    /* Spacing */
+    .p-1 {
+      padding: 0.25rem;
+    }
+    
+    .p-2 {
+      padding: 0.5rem;
+    }
+    
+    .p-4 {
+      padding: 1rem;
+    }
+    
+    .p-6 {
+      padding: 1.5rem;
+    }
+    
+    .px-2 {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .py-1 {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+    
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    
+    .py-6 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+    
+    .m-auto {
+      margin: auto;
+    }
+    
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .mb-1 {
+      margin-bottom: 0.25rem;
+    }
+    
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+    
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .mt-1 {
+      margin-top: 0.25rem;
+    }
+    
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+    
+    .mt-4 {
+      margin-top: 1rem;
+    }
+    
+    .ml-2 {
+      margin-left: 0.5rem;
+    }
+    
+    .mr-2 {
+      margin-right: 0.5rem;
+    }
+    
+    /* Borders */
+    .rounded-full {
+      border-radius: 9999px;
+    }
+    
+    .rounded-lg {
+      border-radius: var(--radius);
+    }
+    
+    .border {
+      border: 1px solid var(--border);
+    }
+    
+    .border-t {
+      border-top: 1px solid var(--border);
+    }
+    
+    .border-b {
+      border-bottom: 1px solid var(--border);
+    }
+    
+    /* Colors */
+    .bg-black {
+      background-color: #000;
+    }
+    
+    .bg-zinc-900 {
+      background-color: #18181b;
+    }
+    
+    .bg-zinc-800 {
+      background-color: #27272a;
+    }
+    
+    .bg-amber-500 {
+      background-color: var(--primary);
+    }
+    
+    .bg-black-50 {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .text-black {
+      color: #000;
+    }
+    
+    .text-white {
+      color: #fff;
+    }
+    
+    .text-amber-500 {
+      color: var(--primary);
+    }
+    
+    .text-zinc-400 {
+      color: #a1a1aa;
+    }
+    
+    .text-zinc-300 {
+      color: #d4d4d8;
+    }
+    
+    .border-amber-500 {
+      border-color: var(--primary);
+    }
+    
+    .border-zinc-800 {
+      border-color: #27272a;
+    }
+    
+    /* Component specific styles */
+    .hero-banner {
+      height: 12rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .tabs {
+      width: 100%;
+    }
+    
+    .tabs-list {
+      background-color: #18181b;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    
+    .tab-trigger {
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+      display: flex;
+      align-items: center;
+      transition: all var(--transition);
+    }
+    
+    .tab-trigger.active {
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .section-title {
+      position: relative;
+      padding: 1rem 0;
+      margin-bottom: 1.5rem;
+    }
+    
+    .section-title h2 {
+      text-align: center;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.25rem;
+      position: relative;
+      z-index: 1;
+      background-color: var(--background);
+      display: inline-block;
+      padding: 0 1rem;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: rgba(245, 158, 11, 0.3);
+      z-index: 0;
+    }
+    
+    .menu-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background-color: rgba(24, 24, 27, 0.5);
+      cursor: pointer;
+      transition: background-color var(--transition);
+    }
+    
+    .menu-item:hover {
+      background-color: #18181b;
+    }
+    
+    .menu-item-image {
+      width: 5rem;
+      height: 5rem;
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    
+    .menu-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .menu-item-content {
+      flex: 1;
+    }
+    
+    .menu-item-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    
+    .menu-item-description {
+      font-size: 0.875rem;
+      color: #a1a1aa;
+      margin-bottom: 0.5rem;
+    }
+    
+    .menu-item-price {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    
+    /* Dialog styles */
+    .dialog-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition), visibility var(--transition);
+      padding: 1rem;
+    }
+    
+    .dialog-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .dialog-content {
+      background-color: #18181b;
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 576px; /* Match your image width */
+      max-height: 90vh;
+      overflow: hidden;
+      transform: translateY(20px);
+      transition: transform var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .dialog-overlay.active .dialog-content {
+      transform: translateY(0);
+    }
+    
+    .dialog-image-container {
+      position: relative;
+      width: 100%;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .dialog-image-container img {
+      max-width: 100%;
+      max-height: 60vh; /* Limit height on larger screens */
+      width: auto;
+      height: auto;
+      object-fit: contain; /* Preserve aspect ratio */
+    }
+    
+    .dialog-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      border: none;
+      transition: background-color var(--transition);
+    }
+    
+    .dialog-close:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .dialog-details {
+      padding: 1.5rem;
+      overflow-y: auto;
+      max-height: 40vh;
+    }
+    
+    .dialog-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .dialog-description {
+      color: #a1a1aa;
+      margin-bottom: 1rem;
+    }
+    
+    .dialog-price {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+    }
+    
+    .dialog-info {
+      background-color: #27272a;
+      padding: 1rem;
+      border-radius: var(--radius);
+    }
+    
+    .dialog-info-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #18181b;
+      border-top: 1px solid #27272a;
+      display: flex;
+      justify-content: center;
+      padding: 0.75rem 0;
+      z-index: 10;
+    }
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+    }
+    
+    .nav-item-text {
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    
+    .bottom-spacer {
+      height: 4rem;
+    }
+    
+    /* Icons */
+    .icon {
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    
+    .icon-sm {
+      width: 1rem;
+      height: 1rem;
+    }
+    
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.25rem 0.75rem;
+    }
+    
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+      .hero-banner {
+        height: 16rem;
+      }
+      
+      .text-4xl {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-banner {
+        height: 20rem;
+      }
+      
+      .container {
+        padding: 0 2rem;
+      }
+    }
+    
+    /* Specific adjustments for mobile screens */
+    @media (max-width: 576px) {
+      .dialog-image-container img {
+        max-height: 50vh; /* Slightly smaller on mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Banner -->
+  <div class="hero-banner">
+    <img src="imeges/header.jpg" alt="Vantoria Cafe">
+    <div class="absolute inset-0 flex flex-col items-center justify-center hero-overlay">
+      <h1 class="text-4xl font-bold text-white mb-2">ونتوریا</h1>
+      <p class="text-xl text-white">vantoria</p>
+    </div>
+  </div>
+
+  <!-- Menu Tabs -->
+  <div class="tabs" id="menu-tabs">
+    <div class="tabs-list">
+      <button class="tab-trigger active" data-tab="pizza">
+        <svg class="icon icon-sm ml-2" viewBox="0 0 24 24">
+          <path d="M15 11h.01" />
+          <path d="M11 15h.01" />
+          <path d="M16 16h.01" />
+          <path d="m2 16 20 6-6-20A20 20 0 0 0 2 16" />
+          <path d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4" />
+        </svg>
+        پیتزاهای ونتوریا
+      </button>
+      <button class="tab-trigger" data-tab="drinks">
+        <svg class="icon icon-sm ml-2" viewBox="0 0 24 24">
+          <path d="M6 8v13" />
+          <path d="M18 8v13" />
+          <path d="M3 3h18" />
+          <path d="M6 3v3" />
+          <path d="M18 3v3" />
+          <path d="M6 13h12" />
+          <ellipse cx="12" cy="13" rx="5" ry="3" />
+        </svg>
+        نوشیدنی‌ها
+      </button>
+    </div>
+
+    <!-- Pizza Menu -->
+    <div class="tab-content active" id="pizza-content">
+      <div class="px-4 py-6">
+        <div class="section-title">
+          <h2>پیتزاهای ونتوریا</h2>
+        </div>
+
+        <div class="menu-items">
+          <!-- Pizza Item 1 -->
+          <div class="menu-item" data-item-id="5">
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">پیتزا مخصوص ونتوریا</h3>
+              <p class="menu-item-description">خمیر تازه + سس مخصوص + پنیر موزارلا + گوشت + قارچ + فلفل دلمه</p>
+              <p class="menu-item-price">۱۸۵ هزار تومان</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="imeges/item.jpg" alt="پیتزا مخصوص ونتوریا">
+            </div>
+          </div>
+
+          <!-- Pizza Item 2 -->
+          <div class="menu-item" data-item-id="6">
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">پیتزا مارگاریتا</h3>
+              <p class="menu-item-description">خمیر تازه + سس گوجه + پنیر موزارلا + ریحان</p>
+              <p class="menu-item-price">۱۴۵ هزار تومان</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="imeges/item.jpg" alt="پیتزا مارگاریتا">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drinks Menu -->
+    <div class="tab-content" id="drinks-content">
+      <div class="px-4 py-6">
+        <div class="section-title">
+          <h2>نوشیدنی‌ها</h2>
+        </div>
+
+        <div class="menu-items">
+          <!-- Drink Item 1 -->
+          <div class="menu-item" data-item-id="1">
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">آیس آمریکانو</h3>
+              <p class="menu-item-description">آمریکانو + یخ</p>
+              <p class="menu-item-price">۵۹ هزار تومان</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="imeges/item.jpg" alt="آیس آمریکانو">
+            </div>
+          </div>
+
+          <!-- Drink Item 2 -->
+          <div class="menu-item" data-item-id="2">
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">آیس کارامل ماکیاتو</h3>
+              <p class="menu-item-description">یخ + سیروپ کارامل + شیره + اسپرسو</p>
+              <p class="menu-item-price">۶۹ هزار تومان</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="imeges/item.jpg" alt="آیس کارامل ماکیاتو">
+            </div>
+          </div>
+
+          <!-- Drink Item 3 -->
+          <div class="menu-item" data-item-id="3">
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">آیس موکا</h3>
+              <p class="menu-item-description">یخ + شیره + سیروپ شکلات + اسپرسو</p>
+              <p class="menu-item-price">۶۹ هزار تومان</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="imeges/item.jpg" alt="آیس موکا">
+            </div>
+          </div>
+
+          <!-- Drink Item 4 -->
+          <div class="menu-item" data-item-id="4">
+            <div class="menu-item-content">
+              <h3 class="menu-item-title">شیک نوتلا</h3>
+              <p class="menu-item-description">بستنی + شیره + نوتلا + اسکارلت</p>
+              <p class="menu-item-price">۹۵ هزار تومان</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="imeges/item.jpg" alt="شیک نوتلا">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item Detail Dialog -->
+  <div class="dialog-overlay" id="item-dialog">
+    <div class="dialog-content">
+      <div class="dialog-image-container">
+        <img id="dialog-image" src="imeges/item.jpg" alt="Menu Item">
+        <button class="dialog-close" id="dialog-close">
+          <svg class="icon icon-sm" viewBox="0 0 24 24">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <span class="badge dialog-price" id="dialog-price">قیمت</span>
+      </div>
+      <div class="dialog-details">
+        <h3 id="dialog-title" class="dialog-title">عنوان محصول</h3>
+        <p id="dialog-description" class="dialog-description">توضیحات محصول</p>
+        <div class="dialog-info">
+          <h4 class="dialog-info-title">توضیحات بیشتر</h4>
+          <p id="dialog-details">اطلاعات بیشتر درباره محصول در اینجا نمایش داده می‌شود.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a href="#" class="nav-item">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+        <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+        <line x1="6" x2="6" y1="2" y2="4"></line>
+        <line x1="10" x2="10" y1="2" y2="4"></line>
+        <line x1="14" x2="14" y1="2" y2="4"></line>
+      </svg>
+      <span class="nav-item-text">منو</span>
+    </a>
+  </nav>
+
+  <!-- Add padding to account for fixed bottom nav -->
+  <div class="bottom-spacer"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Menu items data
+      const menuItems = {
+        "1": {
+          title: "آیس آمریکانو",
+          description: "آمریکانو + یخ",
+          price: "۵۹ هزار تومان",
+          image: "imeges/item.jpg",
+          details: "اسپرسو با آب سرد و یخ که طعمی خنک و دلپذیر دارد. مناسب برای روزهای گرم تابستان."
+        },
+        "2": {
+          title: "آیس کارامل ماکیاتو",
+          description: "یخ + سیروپ کارامل + شیره + اسپرسو",
+          price: "۶۹ هزار تومان",
+          image: "imeges/item.jpg",
+          details: "ترکیبی از اسپرسو، شیر، سیروپ کارامل و یخ که طعمی شیرین و دلچسب دارد."
+        },
+        "3": {
+          title: "آیس موکا",
+          description: "یخ + شیره + سیروپ شکلات + اسپرسو",
+          price: "۶۹ هزار تومان",
+          image: "imeges/item.jpg",
+          details: "ترکیبی از اسپرسو، شیر، شکلات و یخ که برای دوستداران شکلات بسیار لذت بخش است."
+        },
+        "4": {
+          title: "شیک نوتلا",
+          description: "بستنی + شیره + نوتلا + اسکارلت",
+          price: "۹۵ هزار تومان",
+          image: "imeges/item.jpg",
+          details: "شیک خوشمزه با طعم نوتلا، بستنی وانیلی و تزئین شده با اسکارلت. یک انتخاب عالی برای عاشقان شکلات."
+        },
+        "5": {
+          title: "پیتزا مخصوص ونتوریا",
+          description: "خمیر تازه + سس مخصوص + پنیر موزارلا + گوشت + قارچ + فلفل دلمه",
+          price: "۱۸۵ هزار تومان",
+          image: "imeges/item.jpg",
+          details: "پیتزای مخصوص ونتوریا با خمیر تازه، سس مخصوص، پنیر موزارلا، گوشت، قارچ و فلفل دلمه. یک انتخاب عالی برای عاشقان پیتزا."
+        },
+        "6": {
+          title: "پیتزا مارگاریتا",
+          description: "خمیر تازه + سس گوجه + پنیر موزارلا + ریحان",
+          price: "۱۴۵ هزار تومان",
+          image: "imeges/item.jpg",
+          details: "پیتزای کلاسیک مارگاریتا با خمیر تازه، سس گوجه، پنیر موزارلا و ریحان تازه. ساده اما خوشمزه!"
+        }
+      };
+      
+      // Tab switching functionality
+      const tabTriggers = document.querySelectorAll('.tab-trigger');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          // Remove active class from all triggers and contents
+          tabTriggers.forEach(t => t.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          
+          // Add active class to clicked trigger and corresponding content
+          trigger.classList.add('active');
+          const tabId = trigger.getAttribute('data-tab');
+          document.getElementById(`${tabId}-content`).classList.add('active');
+        });
+      });
+      
+      // Dialog functionality
+      const dialog = document.getElementById('item-dialog');
+      const dialogClose = document.getElementById('dialog-close');
+      const dialogImage = document.getElementById('dialog-image');
+      const dialogTitle = document.getElementById('dialog-title');
+      const dialogDescription = document.getElementById('dialog-description');
+      const dialogPrice = document.getElementById('dialog-price');
+      const dialogDetails = document.getElementById('dialog-details');
+      
+      // Open dialog when clicking on menu item
+      const menuItemElements = document.querySelectorAll('.menu-item');
+      menuItemElements.forEach(item => {
+        item.addEventListener('click', () => {
+          const itemId = item.getAttribute('data-item-id');
+          openItemDialog(itemId);
+        });
+      });
+      
+      // Close dialog when clicking close button
+      dialogClose.addEventListener('click', () => {
+        closeItemDialog();
+      });
+      
+      // Close dialog when clicking outside content
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) {
+          closeItemDialog();
+        }
+      });
+      
+      // Function to open dialog with item details
+      function openItemDialog(itemId) {
+        const item = menuItems[itemId];
+        if (!item) return;
+        
+        dialogImage.src = item.image;
+        dialogImage.alt = item.title;
+        dialogTitle.textContent = item.title;
+        dialogDescription.textContent = item.description;
+        dialogPrice.textContent = item.price;
+        dialogDetails.textContent = item.details;
+        
+        dialog.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      // Function to close dialog
+      function closeItemDialog() {
+        dialog.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      // Handle escape key to close dialog
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && dialog.classList.contains('active')) {
+          closeItemDialog();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
