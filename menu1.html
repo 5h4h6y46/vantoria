@@ -2,9 +2,12 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ونتوریا | Vantoria</title>
-  <meta name="description" content="منوی دیجیتال ونتوریا | Vantoria Digital Menu">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ونتوریا | Vantoria Pizza</title>
+  <meta name="description" content="منوی دیجیتال ونتوریا | Vantoria Digital Pizza Menu">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   
   <!-- Import Vazirmatn font for Persian text -->
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
@@ -25,7 +28,8 @@
       --card: #18181b;
       --card-foreground: #ffffff;
       --border: #27272a;
-      --muted: #71717a;
+      --muted: #27272a;
+      --muted-foreground: #a1a1aa;
       --radius: 0.5rem;
       --transition: 0.3s ease;
     }
@@ -52,12 +56,45 @@
       object-fit: cover;
     }
     
-    button {
-      cursor: pointer;
-      font-family: inherit;
-      border: none;
-      background: none;
-      color: inherit;
+    /* Typography - Mobile optimized */
+    .text-center {
+      text-align: center;
+    }
+    
+    .text-sm {
+      font-size: 0.875rem;
+    }
+    
+    .text-base {
+      font-size: 1rem;
+    }
+    
+    .text-lg {
+      font-size: 1.125rem;
+    }
+    
+    .text-xl {
+      font-size: 1.25rem;
+    }
+    
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+    
+    .text-3xl {
+      font-size: 1.875rem;
+    }
+    
+    .font-medium {
+      font-weight: 500;
+    }
+    
+    .font-semibold {
+      font-weight: 600;
+    }
+    
+    .font-bold {
+      font-weight: 700;
     }
     
     /* Layout */
@@ -72,10 +109,6 @@
     
     .absolute {
       position: absolute;
-    }
-    
-    .fixed {
-      position: fixed;
     }
     
     .flex {
@@ -94,16 +127,16 @@
       justify-content: center;
     }
     
-    .justify-between {
-      justify-content: space-between;
+    .grid {
+      display: grid;
+    }
+    
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, 1fr);
     }
     
     .gap-2 {
       gap: 0.5rem;
-    }
-    
-    .gap-3 {
-      gap: 0.75rem;
     }
     
     .gap-4 {
@@ -125,68 +158,7 @@
       left: 0;
     }
     
-    .z-10 {
-      z-index: 10;
-    }
-    
-    .z-20 {
-      z-index: 20;
-    }
-    
-    .z-30 {
-      z-index: 30;
-    }
-    
-    .z-50 {
-      z-index: 50;
-    }
-    
-    .hidden {
-      display: none;
-    }
-    
-    .block {
-      display: block;
-    }
-    
-    .grid {
-      display: grid;
-    }
-    
-    .grid-cols-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    
-    /* Typography */
-    .text-center {
-      text-align: center;
-    }
-    
-    .text-sm {
-      font-size: 0.875rem;
-    }
-    
-    .text-lg {
-      font-size: 1.125rem;
-    }
-    
-    .text-xl {
-      font-size: 1.25rem;
-    }
-    
-    .text-4xl {
-      font-size: 2.25rem;
-    }
-    
-    .font-medium {
-      font-weight: 500;
-    }
-    
-    .font-bold {
-      font-weight: 700;
-    }
-    
-    /* Spacing */
+    /* Spacing - Mobile optimized */
     .p-2 {
       padding: 0.5rem;
     }
@@ -199,24 +171,9 @@
       padding: 1rem;
     }
     
-    .px-2 {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-    }
-    
     .px-3 {
       padding-left: 0.75rem;
       padding-right: 0.75rem;
-    }
-    
-    .px-4 {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-    
-    .py-1 {
-      padding-top: 0.25rem;
-      padding-bottom: 0.25rem;
     }
     
     .py-2 {
@@ -234,6 +191,16 @@
       padding-bottom: 1rem;
     }
     
+    .py-6 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+    
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
     .mb-1 {
       margin-bottom: 0.25rem;
     }
@@ -242,19 +209,35 @@
       margin-bottom: 0.5rem;
     }
     
+    .mb-3 {
+      margin-bottom: 0.75rem;
+    }
+    
     .mb-4 {
       margin-bottom: 1rem;
+    }
+    
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+    
+    .mt-3 {
+      margin-top: 0.75rem;
     }
     
     .mt-4 {
       margin-top: 1rem;
     }
     
-    .space-y-4 > * + * {
-      margin-top: 1rem;
+    /* Borders */
+    .rounded {
+      border-radius: var(--radius);
     }
     
-    /* Borders */
     .rounded-lg {
       border-radius: var(--radius);
     }
@@ -263,12 +246,8 @@
       border-radius: 9999px;
     }
     
-    .border {
-      border: 1px solid var(--border);
-    }
-    
-    .border-b {
-      border-bottom: 1px solid var(--border);
+    .overflow-hidden {
+      overflow: hidden;
     }
     
     /* Colors */
@@ -276,157 +255,138 @@
       background-color: #000;
     }
     
-    .bg-zinc-800 {
-      background-color: #27272a;
-    }
-    
-    .bg-zinc-900 {
-      background-color: #18181b;
-    }
-    
-    .bg-amber-500 {
-      background-color: var(--primary);
-    }
-    
     .bg-black\/50 {
       background-color: rgba(0, 0, 0, 0.5);
     }
     
-    .bg-black\/80 {
-      background-color: rgba(0, 0, 0, 0.8);
+    .bg-primary {
+      background-color: var(--primary);
     }
     
-    .text-black {
-      color: #000;
+    .bg-muted {
+      background-color: var(--muted);
+    }
+    
+    .bg-card {
+      background-color: var(--card);
+    }
+    
+    .bg-background {
+      background-color: var(--background);
     }
     
     .text-white {
       color: #fff;
     }
     
-    .text-amber-500 {
+    .text-primary {
       color: var(--primary);
     }
     
-    .text-zinc-400 {
-      color: #a1a1aa;
+    .text-primary-foreground {
+      color: var(--primary-foreground);
     }
     
-    /* Component specific styles */
+    .text-muted-foreground {
+      color: var(--muted-foreground);
+    }
+    
+    /* Component specific styles - Mobile optimized */
     .hero-banner {
       position: relative;
-      height: 12rem;
-      overflow: hidden;
-    }
-    
-    .hero-overlay {
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
-    }
-    
-    .hero-image {
-      position: absolute;
-      inset: 0;
-      background-color: rgba(245, 158, 11, 0.2);
-      background-size: cover;
-      background-position: center;
-    }
-    
-    .tabs {
+      height: 10rem;
       width: 100%;
     }
     
-    .tabs-list {
-      width: 100%;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      height: auto;
-    }
-    
-    .tab-trigger {
-      padding: 0.75rem 0;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      border-bottom: 2px solid transparent;
-      transition: all var(--transition);
-    }
-    
-    .tab-trigger.active {
-      color: var(--primary);
-      border-bottom-color: var(--primary);
-    }
-    
-    .tab-content {
-      display: none;
-      padding-bottom: 5rem;
-    }
-    
-    .tab-content.active {
-      display: block;
-    }
-    
-    .menu-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.75rem;
-      border-radius: var(--radius);
-      background-color: var(--card);
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: background-color var(--transition);
-    }
-    
-    .menu-item:hover {
-      background-color: #27272a;
-    }
-    
-    .menu-item-content {
-      flex: 1;
-    }
-    
-    .menu-item-title {
-      font-size: 1.125rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-    
-    .menu-item-description {
-      font-size: 0.875rem;
-      color: #a1a1aa;
-      margin-bottom: 0.5rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    
-    .menu-item-price {
-      display: inline-block;
-      background-color: var(--primary);
-      color: var(--primary-foreground);
-      font-weight: 700;
-      padding: 0.25rem 0.5rem;
-      border-radius: 9999px;
-      font-size: 0.875rem;
-    }
-    
-    .menu-item-image {
-      width: 5rem;
-      height: 5rem;
-      border-radius: var(--radius);
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    
-    .menu-item-image img {
+    .hero-banner img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
     
-    /* Dialog styles */
+    .section-title {
+      position: relative;
+      padding: 0.75rem 0;
+      margin-bottom: 1rem;
+    }
+    
+    .section-title h2 {
+      text-align: center;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.25rem;
+      position: relative;
+      z-index: 1;
+      background-color: var(--background);
+      display: inline-block;
+      padding: 0 1rem;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: rgba(245, 158, 11, 0.3);
+      z-index: 0;
+    }
+    
+    .card {
+      background-color: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    
+    .card:active {
+      transform: scale(0.98);
+    }
+    
+    .card-content {
+      display: flex;
+      align-items: center;
+    }
+    
+    .card-info {
+      flex: 1;
+      padding: 0.75rem;
+      min-height: 5.5rem;
+    }
+    
+    .card-image {
+      width: 5.5rem;
+      height: 5.5rem;
+      flex-shrink: 0;
+      position: relative;
+    }
+    
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+    }
+    
+    /* Dialog styles - Mobile optimized */
     .dialog-overlay {
       position: fixed;
       top: 0;
@@ -449,29 +409,28 @@
     }
     
     .dialog-content {
-      background-color: #18181b;
+      background-color: var(--card);
       border-radius: var(--radius);
       width: 100%;
       height: 100%;
       max-height: 100%;
       overflow: hidden;
-      transform: translateY(20px);
-      transition: transform var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
     }
     
     .dialog-image-container {
       position: relative;
-      aspect-ratio: 16/9;
-      background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      width: 100%;
+      height: 40vh;
+      max-height: 40vh;
     }
     
     .dialog-image-container img {
-      max-width: 100%;
-      max-height: 40vh;
-      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     
     .dialog-close {
@@ -487,44 +446,35 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background-color var(--transition);
-    }
-    
-    .dialog-close:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-    
-    .dialog-price {
-      position: absolute;
-      bottom: 0.75rem;
-      left: 0.75rem;
-      background-color: var(--primary);
-      color: var(--primary-foreground);
-      font-weight: 700;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
+      z-index: 10;
+      border: none;
+      font-size: 1.25rem;
+      -webkit-tap-highlight-color: transparent;
     }
     
     .dialog-details {
       padding: 1rem;
+      overflow-y: auto;
+      flex: 1;
     }
     
     .dialog-title {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
     
     .dialog-description {
-      color: #a1a1aa;
+      color: var(--muted-foreground);
       margin-bottom: 1rem;
       font-size: 0.875rem;
     }
     
     .dialog-info {
-      background-color: #27272a;
+      background-color: var(--muted);
       padding: 0.75rem;
       border-radius: var(--radius);
+      margin-bottom: 1rem;
     }
     
     .dialog-info-title {
@@ -534,157 +484,97 @@
       font-size: 1rem;
     }
     
-    /* Icons */
-    .icon {
-      width: 1rem;
-      height: 1rem;
-      stroke: currentColor;
-      stroke-width: 2;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    .pizza-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+    
+    .pizza-info-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem;
+      background-color: var(--background);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    
+    .pizza-info-label {
+      font-weight: 500;
+      font-size: 0.75rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .pizza-info-value {
+      font-size: 0.75rem;
+    }
+    
+    /* Scroll behavior */
+    .smooth-scroll {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
     }
   </style>
 </head>
 <body>
   <!-- Hero Banner -->
   <div class="hero-banner">
-    <div class="hero-overlay absolute inset-0 z-10"></div>
-    <div class="hero-image" style="background-image: url('imeges/header.png')"></div>
-    <div class="relative z-20 h-full flex flex-col items-center justify-center p-4">
-      <h1 class="text-4xl font-bold mb-2">ونتوریا</h1>
-      <p class="text-xl">Vantoria</p>
+    <img src="https://placehold.co/800x400/000000/FFFFFF/png?text=Vantoria+Pizza" alt="Vantoria Pizza">
+    <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/50">
+      <h1 class="text-3xl font-bold text-white mb-1">ونتوریا</h1>
+      <p class="text-lg text-white">Vantoria Pizza</p>
     </div>
   </div>
 
-  <!-- Menu Tabs -->
-  <div class="px-4 py-2 sticky top-0 bg-zinc-900 z-30 border-b border-zinc-800">
-    <div class="tabs">
-      <div class="tabs-list grid">
-        <button class="tab-trigger active" data-tab="pizza">
-          <svg class="icon" viewBox="0 0 24 24">
-            <path d="M12 2C8.43 2 5.23 3.54 3.01 6L12 22L20.99 6C18.78 3.55 15.57 2 12 2zm0 15.92L5.51 6.36C7.32 4.5 9.62 3.5 12 3.5s4.68 1 6.49 2.86L12 17.92z"></path>
-            <path d="M10.9 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
-            <path d="M15 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
-          </svg>
-          <span>پیتزاها</span>
-        </button>
-        <button class="tab-trigger" data-tab="drinks">
-          <svg class="icon" viewBox="0 0 24 24">
-            <path d="M18.5 5l-1.9 6h-9.2l-1.9-6h13z"></path>
-            <path d="M2.5 5h19"></path>
-            <path d="M6.5 5l1.5-2h8l1.5 2"></path>
-            <path d="M10.5 11v9"></path>
-            <path d="M13.5 11v9"></path>
-            <path d="M6.5 20h11"></path>
-          </svg>
-          <span>نوشیدنی‌ها</span>
-        </button>
-      </div>
+  <!-- Pizza Menu -->
+  <div class="container mx-auto px-3 py-4">
+    <div class="section-title">
+      <h2 class="text-xl font-bold text-primary relative z-10 bg-background inline-block px-4 mx-auto">
+        پیتزاهای ونتوریا
+      </h2>
+      <div class="absolute top-1/2 left-0 right-0 h-px bg-primary" style="opacity: 0.3;"></div>
+    </div>
+    
+    <div class="mt-3" id="pizza-menu">
+      <!-- Pizza cards will be inserted here by JavaScript -->
+    </div>
+  </div>
 
-      <div class="mt-4">
-        <!-- Pizza Tab Content -->
-        <div class="tab-content active" id="pizza-content">
-          <div class="space-y-4">
-            <h2 class="text-xl font-bold text-amber-500 text-center">پیتزاهای ونتوریا</h2>
-            
-            <!-- Pizza Item 1 -->
-            <div class="menu-item" data-item-id="1">
-              <div class="menu-item-content">
-                <h3 class="menu-item-title">پیتزا مخصوص ونتوریا</h3>
-                <p class="menu-item-description">خمیر تازه + سس مخصوص + پنیر موزارلا + گوشت + قارچ + فلفل دلمه</p>
-                <span class="menu-item-price">۱۸۵ هزار تومان</span>
-              </div>
-              <div class="menu-item-image">
-                <img src="imeges/item.jpg" alt="پیتزا مخصوص ونتوریا">
-              </div>
+  <!-- Pizza Details Dialog -->
+  <div class="dialog-overlay" id="pizza-dialog">
+    <div class="dialog-content">
+      <div class="dialog-image-container">
+        <img id="dialog-image" src="/placeholder.svg" alt="Pizza">
+        <button class="dialog-close" id="dialog-close">✕</button>
+        <span class="badge" id="dialog-price" style="position: absolute; bottom: 1rem; left: 1rem;"></span>
+      </div>
+      
+      <div class="dialog-details smooth-scroll">
+        <h3 id="dialog-title" class="dialog-title"></h3>
+        <p id="dialog-description" class="dialog-description"></p>
+        
+        <div class="dialog-info mt-3">
+          <h4 class="dialog-info-title">مشخصات</h4>
+          <div class="pizza-info-grid">
+            <div class="pizza-info-item">
+              <span class="pizza-info-label">اندازه</span>
+              <span id="dialog-size" class="pizza-info-value"></span>
             </div>
-            
-            <!-- Pizza Item 2 -->
-            <div class="menu-item" data-item-id="2">
-              <div class="menu-item-content">
-                <h3 class="menu-item-title">پیتزا مارگاریتا</h3>
-                <p class="menu-item-description">خمیر تازه + سس گوجه + پنیر موزارلا + ریحان</p>
-                <span class="menu-item-price">۱۴۵ هزار تومان</span>
-              </div>
-              <div class="menu-item-image">
-                <img src="imeges/item.jpg" alt="پیتزا مارگاریتا">
-              </div>
+            <div class="pizza-info-item">
+              <span class="pizza-info-label">کالری</span>
+              <span id="dialog-calories" class="pizza-info-value"></span>
+            </div>
+            <div class="pizza-info-item">
+              <span class="pizza-info-label">زمان آماده‌سازی</span>
+              <span id="dialog-prep-time" class="pizza-info-value"></span>
             </div>
           </div>
         </div>
         
-        <!-- Drinks Tab Content -->
-        <div class="tab-content" id="drinks-content">
-          <div class="space-y-4">
-            <h2 class="text-xl font-bold text-amber-500 text-center">نوشیدنی‌ها</h2>
-            
-            <!-- Drink Item 1 -->
-            <div class="menu-item" data-item-id="3">
-              <div class="menu-item-content">
-                <h3 class="menu-item-title">آیس آمریکانو</h3>
-                <p class="menu-item-description">آمریکانو + یخ</p>
-                <span class="menu-item-price">۵۹ هزار تومان</span>
-              </div>
-              <div class="menu-item-image">
-                <img src="imeges/item.jpg" alt="آیس آمریکانو">
-              </div>
-            </div>
-            
-            <!-- Drink Item 2 -->
-            <div class="menu-item" data-item-id="4">
-              <div class="menu-item-content">
-                <h3 class="menu-item-title">آیس کارامل ماکیاتو</h3>
-                <p class="menu-item-description">یخ + سیروپ کارامل + شیره + اسپرسو</p>
-                <span class="menu-item-price">۶۹ هزار تومان</span>
-              </div>
-              <div class="menu-item-image">
-                <img src="imeges/item.jpg" alt="آیس کارامل ماکیاتو">
-              </div>
-            </div>
-            
-            <!-- Drink Item 3 -->
-            <div class="menu-item" data-item-id="5">
-              <div class="menu-item-content">
-                <h3 class="menu-item-title">آیس موکا</h3>
-                <p class="menu-item-description">یخ + شیره + سیروپ شکلات + اسپرسو</p>
-                <span class="menu-item-price">۶۹ هزار تومان</span>
-              </div>
-              <div class="menu-item-image">
-                <img src="imeges/item.jpg" alt="آیس موکا">
-              </div>
-            </div>
-            
-            <!-- Drink Item 4 -->
-            <div class="menu-item" data-item-id="6">
-              <div class="menu-item-content">
-                <h3 class="menu-item-title">شیک نوتلا</h3>
-                <p class="menu-item-description">بستنی + شیره + نوتلا + اسکارلت</p>
-                <span class="menu-item-price">۹۵ هزار تومان</span>
-              </div>
-              <div class="menu-item-image">
-                <img src="imeges/item.jpg" alt="شیک نوتلا">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Item Detail Dialog -->
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-        <span class="dialog-price" id="dialog-price">قیمت</span>
-      </div>
-      <div class="dialog-details">
-        <h3 id="dialog-title" class="dialog-title">عنوان محصول</h3>
-        <p id="dialog-description" class="dialog-description">توضیحات محصول</p>
-        
-        <div class="dialog-info">
-          <h4 class="dialog-info-title">توضیحات بیشتر</h4>
-          <p id="dialog-details" class="text-sm">اطلاعات بیشتر درباره محصول در اینجا نمایش داده می‌شود.</p>
+        <div class="mt-3">
+          <h4 class="font-semibold text-primary mb-2">توضیحات بیشتر</h4>
+          <p id="dialog-details" class="text-sm text-muted-foreground"></p>
         </div>
       </div>
     </div>
@@ -692,125 +582,130 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Menu items data
-      const menuItems = {
-        "1": {
+      // Pizza menu data
+      const pizzaItems = [
+        {
+          id: 1,
           title: "پیتزا مخصوص ونتوریا",
           description: "خمیر تازه + سس مخصوص + پنیر موزارلا + گوشت + قارچ + فلفل دلمه",
           price: "۱۸۵ هزار تومان",
-          image: "imeges/item.jpg",
-          details: "پیتزای مخصوص ونتوریا با خمیر تازه، سس مخصوص، پنیر موزارلا، گوشت، قارچ و فلفل دلمه. یک انتخاب عالی برای عاشقان پیتزا."
+          details: "پیتزای مخصوص ونتوریا با خمیر تازه، سس مخصوص، پنیر موزارلا، گوشت، قارچ و فلفل دلمه. یک انتخاب عالی برای عاشقان پیتزا.",
+          image: "https://placehold.co/400x400/333333/FFFFFF/png?text=Pizza",
+          size: "متوسط",
+          calories: "۸۵۰ کالری",
+          prepTime: "۲۰ دقیقه"
         },
-        "2": {
+        {
+          id: 2,
           title: "پیتزا مارگاریتا",
           description: "خمیر تازه + سس گوجه + پنیر موزارلا + ریحان",
           price: "۱۴۵ هزار تومان",
-          image: "imeges/item.jpg",
-          details: "پیتزای کلاسیک مارگاریتا با خمیر تازه، سس گوجه، پنیر موزارلا و ریحان تازه. ساده اما خوشمزه!"
+          details: "پیتزای کلاسیک مارگاریتا با خمیر تازه، سس گوجه، پنیر موزارلا و ریحان تازه. ساده اما خوشمزه!",
+          image: "https://placehold.co/400x400/333333/FFFFFF/png?text=Margherita",
+          size: "متوسط",
+          calories: "۷۲۰ کالری",
+          prepTime: "۱۵ دقیقه"
         },
-        "3": {
-          title: "آیس آمریکانو",
-          description: "آمریکانو + یخ",
-          price: "۵۹ هزار تومان",
-          image: "imeges/item.jpg",
-          details: "اسپرسو با آب سرد و یخ که طعمی خنک و دلپذیر دارد. مناسب برای روزهای گرم تابستان."
+        {
+          id: 3,
+          title: "پیتزا پپرونی",
+          description: "خمیر تازه + سس مخصوص + پنیر موزارلا + پپرونی",
+          price: "۱۶۵ هزار تومان",
+          details: "پیتزای خوشمزه پپرونی با خمیر تازه، سس مخصوص، پنیر موزارلا و پپرونی. تند و لذیذ!",
+          image: "https://placehold.co/400x400/333333/FFFFFF/png?text=Pepperoni",
+          size: "متوسط",
+          calories: "۸۰۰ کالری",
+          prepTime: "۱۸ دقیقه"
         },
-        "4": {
-          title: "آیس کارامل ماکیاتو",
-          description: "یخ + سیروپ کارامل + شیره + اسپرسو",
-          price: "۶۹ هزار تومان",
-          image: "imeges/item.jpg",
-          details: "ترکیبی از اسپرسو، شیر، سیروپ کارامل و یخ که طعمی شیرین و دلچسب دارد."
-        },
-        "5": {
-          title: "آیس موکا",
-          description: "یخ + شیره + سیروپ شکلات + اسپرسو",
-          price: "۶۹ هزار تومان",
-          image: "imeges/item.jpg",
-          details: "ترکیبی از اسپرسو، شیر، شکلات و یخ که برای دوستداران شکلات بسیار لذت بخش است."
-        },
-        "6": {
-          title: "شیک نوتلا",
-          description: "بستنی + شیره + نوتلا + اسکارلت",
-          price: "۹۵ هزار تومان",
-          image: "imeges/item.jpg",
-          details: "شیک خوشمزه با طعم نوتلا، بستنی وانیلی و تزئین شده با اسکارلت. یک انتخاب عالی برای عاشقان شکلات."
+        {
+          id: 4,
+          title: "پیتزا سبزیجات",
+          description: "خمیر تازه + سس مخصوص + پنیر موزارلا + قارچ + فلفل دلمه + گوجه + زیتون",
+          price: "۱۵۵ هزار تومان",
+          details: "پیتزای سبزیجات با خمیر تازه، سس مخصوص، پنیر موزارلا، قارچ، فلفل دلمه، گوجه و زیتون. مناسب برای گیاهخواران!",
+          image: "https://placehold.co/400x400/333333/FFFFFF/png?text=Veggie",
+          size: "متوسط",
+          calories: "۷۰۰ کالری",
+          prepTime: "۱۷ دقیقه"
         }
-      };
+      ];
       
-      // Tab switching functionality
-      const tabTriggers = document.querySelectorAll('.tab-trigger');
-      const tabContents = document.querySelectorAll('.tab-content');
+      // Render pizza menu
+      const pizzaMenu = document.getElementById('pizza-menu');
       
-      tabTriggers.forEach(trigger => {
-        trigger.addEventListener('click', () => {
-          // Remove active class from all triggers and contents
-          tabTriggers.forEach(t => t.classList.remove('active'));
-          tabContents.forEach(c => c.classList.remove('active'));
-          
-          // Add active class to clicked trigger and corresponding content
-          trigger.classList.add('active');
-          const tabId = trigger.getAttribute('data-tab');
-          document.getElementById(`${tabId}-content`).classList.add('active');
+      pizzaItems.forEach(pizza => {
+        const pizzaCard = document.createElement('div');
+        pizzaCard.className = 'card';
+        pizzaCard.setAttribute('data-pizza-id', pizza.id);
+        
+        pizzaCard.innerHTML = `
+          <div class="card-content">
+            <div class="card-info">
+              <h3 class="text-lg font-bold mb-1">${pizza.title}</h3>
+              <p class="text-muted-foreground text-sm mb-2">${pizza.description}</p>
+              <span class="badge">${pizza.price}</span>
+            </div>
+            <div class="card-image">
+              <img src="${pizza.image}" alt="${pizza.title}">
+            </div>
+          </div>
+        `;
+        
+        pizzaCard.addEventListener('click', () => {
+          openPizzaDetails(pizza);
         });
+        
+        pizzaMenu.appendChild(pizzaCard);
       });
       
       // Dialog functionality
-      const dialog = document.getElementById('item-dialog');
+      const dialog = document.getElementById('pizza-dialog');
       const dialogClose = document.getElementById('dialog-close');
       const dialogImage = document.getElementById('dialog-image');
       const dialogTitle = document.getElementById('dialog-title');
       const dialogDescription = document.getElementById('dialog-description');
       const dialogPrice = document.getElementById('dialog-price');
       const dialogDetails = document.getElementById('dialog-details');
+      const dialogSize = document.getElementById('dialog-size');
+      const dialogCalories = document.getElementById('dialog-calories');
+      const dialogPrepTime = document.getElementById('dialog-prep-time');
       
-      // Open dialog when clicking on menu item
-      const menuItemElements = document.querySelectorAll('.menu-item');
-      menuItemElements.forEach(item => {
-        item.addEventListener('click', () => {
-          const itemId = item.getAttribute('data-item-id');
-          openItemDialog(itemId);
-        });
-      });
+      function openPizzaDetails(pizza) {
+        dialogImage.src = pizza.image;
+        dialogImage.alt = pizza.title;
+        dialogTitle.textContent = pizza.title;
+        dialogDescription.textContent = pizza.description;
+        dialogPrice.textContent = pizza.price;
+        dialogDetails.textContent = pizza.details;
+        dialogSize.textContent = pizza.size;
+        dialogCalories.textContent = pizza.calories;
+        dialogPrepTime.textContent = pizza.prepTime;
+        
+        dialog.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closePizzaDetails() {
+        dialog.classList.remove('active');
+        document.body.style.overflow = '';
+      }
       
       // Close dialog when clicking close button
       dialogClose.addEventListener('click', () => {
-        closeItemDialog();
+        closePizzaDetails();
       });
       
       // Close dialog when clicking outside content
       dialog.addEventListener('click', (e) => {
         if (e.target === dialog) {
-          closeItemDialog();
+          closePizzaDetails();
         }
       });
-      
-      // Function to open dialog with item details
-      function openItemDialog(itemId) {
-        const item = menuItems[itemId];
-        if (!item) return;
-        
-        dialogImage.src = item.image;
-        dialogImage.alt = item.title;
-        dialogTitle.textContent = item.title;
-        dialogDescription.textContent = item.description;
-        dialogPrice.textContent = item.price;
-        dialogDetails.textContent = item.details;
-        
-        dialog.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when dialog is open
-      }
-      
-      // Function to close dialog
-      function closeItemDialog() {
-        dialog.classList.remove('active');
-        document.body.style.overflow = ''; // Restore scrolling
-      }
       
       // Handle escape key to close dialog
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && dialog.classList.contains('active')) {
-          closeItemDialog();
+          closePizzaDetails();
         }
       });
       
