@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ونتوریا | Vantoria</title>
+  <meta name="description" content="منوی دیجیتال ونتوریا | Vantoria Digital Menu">
+  
+  <!-- Import Vazirmatn font for Persian text -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset and base styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    :root {
+      --primary: #f59e0b;
+      --primary-foreground: #000000;
+      --background: #000000;
+      --foreground: #ffffff;
+      --card: #18181b;
+      --card-foreground: #ffffff;
+      --border: #27272a;
+      --muted: #71717a;
+      --radius: 0.5rem;
+      --transition: 0.3s ease;
+    }
+    
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      min-height: 100vh;
+      line-height: 1.5;
+      direction: rtl;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      border: none;
+      background: none;
+      color: inherit;
+    }
+    
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .relative {
+      position: relative;
+    }
+    
+    .absolute {
+      position: absolute;
+    }
+    
+    .fixed {
+      position: fixed;
+    }
+    
+    .flex {
+      display: flex;
+    }
+    
+    .flex-col {
+      flex-direction: column;
+    }
+    
+    .items-center {
+      align-items: center;
+    }
+    
+    .justify-center {
+      justify-content: center;
+    }
+    
+    .justify-between {
+      justify-content: space-between;
+    }
+    
+    .gap-2 {
+      gap: 0.5rem;
+    }
+    
+    .gap-3 {
+      gap: 0.75rem;
+    }
+    
+    .gap-4 {
+      gap: 1rem;
+    }
+    
+    .w-full {
+      width: 100%;
+    }
+    
+    .h-full {
+      height: 100%;
+    }
+    
+    .inset-0 {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .z-10 {
+      z-index: 10;
+    }
+    
+    .z-20 {
+      z-index: 20;
+    }
+    
+    .z-30 {
+      z-index: 30;
+    }
+    
+    .z-50 {
+      z-index: 50;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    .block {
+      display: block;
+    }
+    
+    .grid {
+      display: grid;
+    }
+    
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    
+    /* Typography */
+    .text-center {
+      text-align: center;
+    }
+    
+    .text-sm {
+      font-size: 0.875rem;
+    }
+    
+    .text-lg {
+      font-size: 1.125rem;
+    }
+    
+    .text-xl {
+      font-size: 1.25rem;
+    }
+    
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+    
+    .font-medium {
+      font-weight: 500;
+    }
+    
+    .font-bold {
+      font-weight: 700;
+    }
+    
+    /* Spacing */
+    .p-2 {
+      padding: 0.5rem;
+    }
+    
+    .p-3 {
+      padding: 0.75rem;
+    }
+    
+    .p-4 {
+      padding: 1rem;
+    }
+    
+    .px-2 {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    
+    .px-3 {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+    
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .py-1 {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+    
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    
+    .mb-1 {
+      margin-bottom: 0.25rem;
+    }
+    
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+    
+    .mt-4 {
+      margin-top: 1rem;
+    }
+    
+    .space-y-4 > * + * {
+      margin-top: 1rem;
+    }
+    
+    /* Borders */
+    .rounded-lg {
+      border-radius: var(--radius);
+    }
+    
+    .rounded-full {
+      border-radius: 9999px;
+    }
+    
+    .border {
+      border: 1px solid var(--border);
+    }
+    
+    .border-b {
+      border-bottom: 1px solid var(--border);
+    }
+    
+    /* Colors */
+    .bg-black {
+      background-color: #000;
+    }
+    
+    .bg-zinc-800 {
+      background-color: #27272a;
+    }
+    
+    .bg-zinc-900 {
+      background-color: #18181b;
+    }
+    
+    .bg-amber-500 {
+      background-color: var(--primary);
+    }
+    
+    .bg-black\/50 {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .bg-black\/80 {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .text-black {
+      color: #000;
+    }
+    
+    .text-white {
+      color: #fff;
+    }
+    
+    .text-amber-500 {
+      color: var(--primary);
+    }
+    
+    .text-zinc-400 {
+      color: #a1a1aa;
+    }
+    
+    /* Component specific styles */
+    .hero-banner {
+      position: relative;
+      height: 12rem;
+      overflow: hidden;
+    }
+    
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+    }
+    
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(245, 158, 11, 0.2);
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .tabs {
+      width: 100%;
+    }
+    
+    .tabs-list {
+      width: 100%;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      height: auto;
+    }
+    
+    .tab-trigger {
+      padding: 0.75rem 0;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-bottom: 2px solid transparent;
+      transition: all var(--transition);
+    }
+    
+    .tab-trigger.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    
+    .tab-content {
+      display: none;
+      padding-bottom: 5rem;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      border-radius: var(--radius);
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: background-color var(--transition);
+    }
+    
+    .menu-item:hover {
+      background-color: #27272a;
+    }
+    
+    .menu-item-content {
+      flex: 1;
+    }
+    
+    .menu-item-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    
+    .menu-item-description {
+      font-size: 0.875rem;
+      color: #a1a1aa;
+      margin-bottom: 0.5rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .menu-item-price {
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+      font-weight: 700;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+    }
+    
+    .menu-item-image {
+      width: 5rem;
+      height: 5rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    
+    .menu-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Dialog styles */
+    .dialog-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition), visibility var(--transition);
+      padding: 1rem;
+    }
+    
+    .dialog-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .dialog-content {
+      background-color: #18181b;
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 28rem;
+      max-height: 90vh;
+      overflow: hidden;
+      transform: translateY(20px);
+      transition: transform var(--transition);
+    }
+    
+    .dialog-overlay.active .dialog-content {
+      transform: translateY(0);
+    }
+    
+    .dialog-image-container {
+      position: relative;
+      aspect-ratio: 16/9;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .dialog-image-container img {
+      max-width: 100%;
+      max-height: 40vh;
+      object-fit: contain;
+    }
+    
+    .dialog-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color var(--transition);
+    }
+    
+    .dialog-close:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .dialog-price {
+      position: absolute;
+      bottom: 0.75rem;
+      left: 0.75rem;
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+    }
+    
+    .dialog-details {
+      padding: 1rem;
+    }
+    
+    .dialog-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .dialog-description {
+      color: #a1a1aa;
+      margin-bottom: 1rem;
+    }
+    
+    .dialog-info {
+      background-color: #27272a;
+      padding: 0.75rem;
+      border-radius: var(--radius);
+    }
+    
+    .dialog-info-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    /* Icons */
+    .icon {
+      width: 1rem;
+      height: 1rem;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Banner -->
+  <div class="hero-banner">
+    <div class="hero-overlay absolute inset-0 z-10"></div>
+    <div class="hero-image" style="background-image: url('imeges/header.png')"></div>
+    <div class="relative z-20 h-full flex flex-col items-center justify-center p-4">
+      <h1 class="text-4xl font-bold mb-2">ونتوریا</h1>
+      <p class="text-xl">Vantoria</p>
+    </div>
+  </div>
+
+  <!-- Menu Tabs -->
+  <div class="px-4 py-2 sticky top-0 bg-zinc-900 z-30 border-b border-zinc-800">
+    <div class="tabs">
+      <div class="tabs-list grid">
+        <button class="tab-trigger active" data-tab="pizza">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 2C8.43 2 5.23 3.54 3.01 6L12 22L20.99 6C18.78 3.55 15.57 2 12 2zm0 15.92L5.51 6.36C7.32 4.5 9.62 3.5 12 3.5s4.68 1 6.49 2.86L12 17.92z"></path>
+            <path d="M10.9 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
+            <path d="M15 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
+          </svg>
+          <span>پیتزاها</span>
+        </button>
+        <button class="tab-trigger" data-tab="drinks">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M18.5 5l-1.9 6h-9.2l-1.9-6h13z"></path>
+            <path d="M2.5 5h19"></path>
+            <path d="M6.5 5l1.5-2h8l1.5 2"></path>
+            <path d="M10.5 11v9"></path>
+            <path d="M13.5 11v9"></path>
+            <path d="M6.5 20h11"></path>
+          </svg>
+          <span>نوشیدنی‌ها</span>
+        </button>
+      </div>
+
+      <div class="mt-4">
+        <!-- Pizza Tab Content -->
+        <div class="tab-content active" id="pizza-content">
+          <div class="space-y-4">
+            <h2 class="text-xl font-bold text-amber-500 text-center">پیتزاهای ونتوریا</h2>
+            
+            <!-- Pizza Item 1 -->
+            <div class="menu-item" data-item-id="1">
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">پیتزا مخصوص ونتوریا</h3>
+                <p class="menu-item-description">خمیر تازه + سس مخصوص + پنیر موزارلا + گوشت + قارچ + فلفل دلمه</p>
+                <span class="menu-item-price">۱۸۵ هزار تومان</span>
+              </div>
+              <div class="menu-item-image">
+                <img src="imeges/item.jpg" alt="پیتزا مخصوص ونتوریا">
+              </div>
+            </div>
+            
+            <!-- Pizza Item 2 -->
+            <div class="menu-item" data-item-id="2">
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">پیتزا مارگاریتا</h3>
+                <p class="menu-item-description">خمیر تازه + سس گوجه + پنیر موزارلا + ریحان</p>
+                <span class="menu-item-price">۱۴۵ هزار تومان</span>
+              </div>
+              <div class="menu-item-image">
+                <img src="imeges/item.jpg" alt="پیتزا مارگاریتا">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Drinks Tab Content -->
+        <div class="tab-content" id="drinks-content">
+          <div class="space-y-4">
+            <h2 class="text-xl font-bold text-amber-500 text-center">نوشیدنی‌ها</h2>
+            
+            <!-- Drink Item 1 -->
+            <div class="menu-item" data-item-id="3">
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">آیس آمریکانو</h3>
+                <p class="menu-item-description">آمریکانو + یخ</p>
+                <span class="menu-item-price">۵۹ هزار تومان</span>
+              </div>
+              <div class="menu-item-image">
+                <img src="imeges/item.jpg" alt="آیس آمریکانو">
+              </div>
+            </div>
+            
+            <!-- Drink Item 2 -->
+            <div class="menu-item" data-item-id="4">
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">آیس کارامل ماکیاتو</h3>
+                <p class="menu-item-description">یخ + سیروپ کارامل + شیره + اسپرسو</p>
+                <span class="menu-item-price">۶۹ هزار تومان</span>
+              </div>
+              <div class="menu-item-image">
+                <img src="imeges/item.jpg" alt="آیس کارامل ماکیاتو">
+              </div>
+            </div>
+            
+            <!-- Drink Item 3 -->
+            <div class="menu-item" data-item-id="5">
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">آیس موکا</h3>
+                <p class="menu-item-description">یخ + شیره + سیروپ شکلات + اسپرسو</p>
+                <span class="menu-item-price">۶۹ هزار تومان</span>
+              </div>
+              <div class="menu-item-image">
+                <img src="imeges/item.jpg" alt="آیس موکا">
+              </div>
+            </div>
+            
+            <!-- Drink Item 4 -->
+            <div class="menu-item" data-item-id="6">
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">شیک نوتلا</h3>
+                <p class="menu-item-description">بستنی + شیره + نوتلا + اسکارلت</p>
+                <span class="menu-item-price">۹۵ هزار تومان</span>
+              </div>
+              <div class="menu-item-image">
+                <img src="imeges/item.jpg" alt="شیک نوتلا">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item Detail Dialog -->
+  <div class="dialog-overlay" id="item-dialog">
+    <div class="dialog-content">
+      <div class="dialog-image-container">
+        <img id="dialog-image" src="imeges/item.jpg" alt="Menu Item">
+        <button class="dialog-close" id="dialog-close">
+          <svg class="icon" viewBox="0 0 24 24">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <span class="dialog-price" id="dialog-price">قیمت</span>
+      </div>
+      <div class="dialog-details">
+        <h3 id="dialog-title" class="dialog-title">عنوان محصول</h3>
+        <p id="dialog-description" class="dialog-description">توضیحات محصول</p>
+        
+        <div class="dialog-info">
+          <h4 class="dialog-info-title">توضیحات بیشتر</h4>
+          <p id="dialog-details" class="text-sm">اطلاعات بیشتر درباره محصول در اینجا نمایش داده می‌شود.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Menu items data
+      const menuItems = {
+        "1": {
+          title: "پیتزا مخصوص ونتوریا",
+          description: "خمیر تازه + سس مخصوص + پنیر موزارلا + گوشت + قارچ + فلفل دلمه",
+          price: "۱۸۵ هزار تومان",
+          image: "imeges/item.jpg",
+          details: "پیتزای مخصوص ونتوریا با خمیر تازه، سس مخصوص، پنیر موزارلا، گوشت، قارچ و فلفل دلمه. یک انتخاب عالی برای عاشقان پیتزا."
+        },
+        "2": {
+          title: "پیتزا مارگاریتا",
+          description: "خمیر تازه + سس گوجه + پنیر موزارلا + ریحان",
+          price: "۱۴۵ هزار تومان",
+          image: "imeges/item.jpg",
+          details: "پیتزای کلاسیک مارگاریتا با خمیر تازه، سس گوجه، پنیر موزارلا و ریحان تازه. ساده اما خوشمزه!"
+        },
+        "3": {
+          title: "آیس آمریکانو",
+          description: "آمریکانو + یخ",
+          price: "۵۹ هزار تومان",
+          image: "imeges/item.jpg",
+          details: "اسپرسو با آب سرد و یخ که طعمی خنک و دلپذیر دارد. مناسب برای روزهای گرم تابستان."
+        },
+        "4": {
+          title: "آیس کارامل ماکیاتو",
+          description: "یخ + سیروپ کارامل + شیره + اسپرسو",
+          price: "۶۹ هزار تومان",
+          image: "imeges/item.jpg",
+          details: "ترکیبی از اسپرسو، شیر، سیروپ کارامل و یخ که طعمی شیرین و دلچسب دارد."
+        },
+        "5": {
+          title: "آیس موکا",
+          description: "یخ + شیره + سیروپ شکلات + اسپرسو",
+          price: "۶۹ هزار تومان",
+          image: "imeges/item.jpg",
+          details: "ترکیبی از اسپرسو، شیر، شکلات و یخ که برای دوستداران شکلات بسیار لذت بخش است."
+        },
+        "6": {
+          title: "شیک نوتلا",
+          description: "بستنی + شیره + نوتلا + اسکارلت",
+          price: "۹۵ هزار تومان",
+          image: "imeges/item.jpg",
+          details: "شیک خوشمزه با طعم نوتلا، بستنی وانیلی و تزئین شده با اسکارلت. یک انتخاب عالی برای عاشقان شکلات."
+        }
+      };
+      
+      // Tab switching functionality
+      const tabTriggers = document.querySelectorAll('.tab-trigger');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          // Remove active class from all triggers and contents
+          tabTriggers.forEach(t => t.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          
+          // Add active class to clicked trigger and corresponding content
+          trigger.classList.add('active');
+          const tabId = trigger.getAttribute('data-tab');
+          document.getElementById(`${tabId}-content`).classList.add('active');
+        });
+      });
+      
+      // Dialog functionality
+      const dialog = document.getElementById('item-dialog');
+      const dialogClose = document.getElementById('dialog-close');
+      const dialogImage = document.getElementById('dialog-image');
+      const dialogTitle = document.getElementById('dialog-title');
+      const dialogDescription = document.getElementById('dialog-description');
+      const dialogPrice = document.getElementById('dialog-price');
+      const dialogDetails = document.getElementById('dialog-details');
+      
+      // Open dialog when clicking on menu item
+      const menuItemElements = document.querySelectorAll('.menu-item');
+      menuItemElements.forEach(item => {
+        item.addEventListener('click', () => {
+          const itemId = item.getAttribute('data-item-id');
+          openItemDialog(itemId);
+        });
+      });
+      
+      // Close dialog when clicking close button
+      dialogClose.addEventListener('click', () => {
+        closeItemDialog();
+      });
+      
+      // Close dialog when clicking outside content
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) {
+          closeItemDialog();
+        }
+      });
+      
+      // Function to open dialog with item details
+      function openItemDialog(itemId) {
+        const item = menuItems[itemId];
+        if (!item) return;
+        
+        dialogImage.src = item.image;
+        dialogImage.alt = item.title;
+        dialogTitle.textContent = item.title;
+        dialogDescription.textContent = item.description;
+        dialogPrice.textContent = item.price;
+        dialogDetails.textContent = item.details;
+        
+        dialog.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when dialog is open
+      }
+      
+      // Function to close dialog
+      function closeItemDialog() {
+        dialog.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+      
+      // Handle escape key to close dialog
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && dialog.classList.contains('active')) {
+          closeItemDialog();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
