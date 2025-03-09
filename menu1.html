@@ -450,7 +450,7 @@
       color: var(--primary-foreground);
     }
     
-    /* Dialog styles - Mobile optimized for 576x759 images */
+    /* Dialog styles - Mobile optimized */
     .dialog-overlay {
       position: fixed;
       top: 0;
@@ -487,16 +487,20 @@
     .dialog-image-container {
       position: relative;
       width: 100%;
-      /* Adjusted for 576x759 aspect ratio */
-      height: 50vh;
-      max-height: 50vh;
+      /* Height will be set dynamically by JavaScript */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
+      overflow: hidden;
     }
     
     .dialog-image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* Changed to contain to preserve aspect ratio */
-      background-color: #000; /* Black background for the image */
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
     
     .dialog-close {
@@ -868,6 +872,26 @@
       const dialogPrice = document.getElementById('dialog-price');
       const dialogDetails = document.getElementById('dialog-details');
       const infoGrid = document.getElementById('info-grid');
+      const dialogImageContainer = document.querySelector('.dialog-image-container');
+      
+      // Image dimensions for aspect ratio calculation
+      const imageWidth = 576;
+      const imageHeight = 759;
+      const imageAspectRatio = imageWidth / imageHeight;
+      
+      // Function to calculate optimal image container height
+      function updateImageContainerHeight() {
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        
+        // Calculate the maximum height the image can be while maintaining aspect ratio
+        // and not taking up more than 40% of the screen height
+        const maxHeight = Math.min(screenHeight * 0.4, screenWidth / imageAspectRatio);
+        
+        // Set the height of the image container
+        dialogImageContainer.style.height = `${maxHeight}px`;
+        dialogImageContainer.style.maxHeight = `${maxHeight}px`;
+      }
       
       function openItemDetails(item) {
         dialogImage.src = item.image;
@@ -915,6 +939,9 @@
           `;
         }
         
+        // Update image container height before showing dialog
+        updateImageContainerHeight();
+        
         dialog.classList.add('active');
         document.body.style.overflow = 'hidden';
       }
@@ -940,6 +967,13 @@
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && dialog.classList.contains('active')) {
           closeItemDetails();
+        }
+      });
+      
+      // Update image container height when window is resized
+      window.addEventListener('resize', () => {
+        if (dialog.classList.contains('active')) {
+          updateImageContainerHeight();
         }
       });
       
