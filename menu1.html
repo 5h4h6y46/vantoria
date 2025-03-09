@@ -450,7 +450,7 @@
       color: var(--primary-foreground);
     }
     
-    /* Dialog styles - Mobile optimized */
+    /* Dialog styles - Mobile optimized for 576x759 images */
     .dialog-overlay {
       position: fixed;
       top: 0;
@@ -487,14 +487,16 @@
     .dialog-image-container {
       position: relative;
       width: 100%;
-      height: 40vh;
-      max-height: 40vh;
+      /* Adjusted for 576x759 aspect ratio */
+      height: 50vh;
+      max-height: 50vh;
     }
     
     .dialog-image-container img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* Changed to contain to preserve aspect ratio */
+      background-color: #000; /* Black background for the image */
     }
     
     .dialog-close {
